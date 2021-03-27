@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/layout"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageViewPhotoProfile"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="@dimen/size10" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textViewNameCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/size2"
+                android:layout_toEndOf="@id/layout"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <AutoCompleteTextView
+        android:id="@+id/textViewSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size8"
+        android:layout_marginStart="@dimen/size3"
+        android:layout_marginTop="@dimen/size3"
+        android:layout_marginEnd="@dimen/size3"
+        android:layout_marginBottom="@dimen/size3"
+        android:background="@drawable/background_gray"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="@dimen/size2"
+        android:hint="@string/title_search"
+        android:padding="@dimen/size2"
+        android:textSize="@dimen/font2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size3"
+        android:text="@string/title_kategori"
+        android:textColor="@color/darkGray"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size2">
+
+        <TextView
+            android:id="@+id/btnAllProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size2"
+            android:background="@drawable/border_smooth_blue"
+            android:padding="@dimen/size2"
+            android:text="@string/all_product"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewKategori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size5"
+            android:layout_marginTop="@dimen/size2"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/layout_item_kategori" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size3"
+        android:text="@string/title_product"
+        android:textColor="@color/darkGray"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/size2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/layout_item_product" />
+
+        <ImageView
+            android:id="@+id/imageEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:src="@drawable/credit"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewTotalPay"
+            android:layout_width="@dimen/size13"
+            android:layout_height="@dimen/size10"
+            android:layout_marginBottom="@dimen/size2"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/smoothBlue"
+            android:layout_marginEnd="@dimen/size2">
+
+            <TextView
+                android:id="@+id/textViewTotalPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/font"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</LinearLayout>

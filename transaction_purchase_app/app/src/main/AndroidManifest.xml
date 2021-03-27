@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.udacoding.transactionpurchaseapp">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".BaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/rikod_icon"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".view.home.history.DetailHistoryActivity"></activity>
+        <activity android:name=".view.home.home.ResultFileActivity" />
+        <activity android:name=".view.home.home.ChooseCustomerActivity" />
+        <activity android:name=".view.home.home.TransactionActivity" />
+        <activity android:name=".utils.DeviceActivity" />
+        <activity android:name=".view.home.home.CartActivity" />
+        <activity android:name=".view.home.customer.PostCustomerActivity" />
+        <activity
+            android:name=".view.home.finance.PostFinanceActivity"
+            android:theme="@style/NoActionBarMaterial"></activity>
+        <activity
+            android:name=".view.home.HomeActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_home" />
+        <activity android:name=".view.login.LoginActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.udacoding.transactionpurchaseapp.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewPurchase"
+        android:layout_width="@dimen/size18"
+        android:layout_height="@dimen/size18"
+        android:layout_marginStart="@dimen/size2"
+        android:layout_marginTop="@dimen/size2"
+        android:contentDescription="@string/title_image_product" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_below="@+id/imageViewPurchase"
+        android:layout_marginTop="@dimen/size3"
+        android:background="@color/lightGray" />
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_toEndOf="@id/imageViewPurchase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size2"
+        android:layout_marginStart="@dimen/size3"
+        android:layout_marginTop="@dimen/size2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/size4"
+                android:layout_height="@dimen/size4"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/currency" />
+
+            <TextView
+                android:id="@+id/textViewPurchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size1"
+                android:text="@string/title_price_product"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/font3"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size1"
+            android:text="@string/title_note"
+            android:textColor="@color/darkGray"
+            android:textSize="@dimen/font"/>
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size2"
+            android:text="@string/title_date"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/font_date" />
+
+    </LinearLayout>
+
+</RelativeLayout>

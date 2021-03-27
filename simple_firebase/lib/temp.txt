@@ -1,0 +1,46 @@
+Future initMessaging() async {
+    final token = await firebaseMessaging.getToken();
+    setState(() => myToken = token);
+
+    log("Token $token");
+    FirebaseMessaging.onMessage.listen((event) {
+      RemoteNotification notification = event.notification;
+      AndroidNotification android = event.notification?.android;
+      print("onMessage ${notification.body}");
+    });
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      print('A new onMessageOpenedApp event was published!');
+      print("Message ${message.notification.title}");
+    });
+    FirebaseMessaging.onBackgroundMessage(handleBackgorundMessage);
+  }
+
+  Future pushMessage() async {
+    Dio dio = Dio();
+    var dataBody = jsonEncode({
+      "to": "$myToken",
+      "notification": {
+        "body": "test",
+        "title": "Heyy.. Ada berita baru ayo check..",
+        "sound": "default",
+      },
+    });
+    var res = await dio.post(
+      "https://fcm.googleapis.com/fcm/send",
+      data: dataBody,
+      options: Options(
+        headers: {
+          HttpHeaders.contentTypeHeader: "application/json",
+          HttpHeaders.authorizationHeader:
+              "key=AAAAoa5IqkA:APA91bG4Goj9Z0qOhjCQsxpA-iZvkVzVI-accDs0uMLQwIPk-Wc0H9atv-DmCim47UHBnMt_ojHNTon-mJEHfL4I6qy7varXNxxFM7CehAu7GBGe_8Kg4Etg2lPgmGWtf7ftKSyCtJ8M",
+        },
+      ),
+    );
+    log("Res ${res.data}");
+  }
+
+
+Future<void> handleBackgorundMessage(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  print("message ${message.notification.title}");
+}

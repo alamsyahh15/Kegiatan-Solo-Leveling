@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewProduct"
+        android:layout_width="@dimen/size18"
+        android:layout_height="@dimen/size18"
+        android:layout_marginStart="@dimen/size2"
+        android:layout_marginTop="@dimen/size2"
+        android:contentDescription="@string/title_image_product" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_below="@+id/imageViewProduct"
+        android:layout_marginTop="@dimen/size1"
+        android:background="@color/lightGray" />
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size3"
+        android:layout_marginTop="@dimen/size2"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewNameProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_name_product"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font3"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size2">
+
+            <ImageView
+                android:layout_width="@dimen/size3"
+                android:layout_height="@dimen/size3"
+                android:src="@drawable/currency"
+                android:contentDescription="TODO"/>
+
+            <TextView
+                android:id="@+id/textViewPriceProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size1"
+                android:text="@string/title_price_product"
+                android:textColor="@color/darkGray"
+                android:textSize="@dimen/font"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size2"
+            android:layout_gravity="right">
+        <TextView
+            android:id="@+id/textViewQty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Qty 50"
+            android:padding="@dimen/size1"
+            android:textStyle="bold"
+            android:layout_marginRight="@dimen/size2"
+            android:background="@drawable/button_smooth_blue"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font1" />
+
+        <TextView
+            android:id="@+id/textViewPay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment item RM225.00"
+            android:padding="@dimen/size1"
+            android:textStyle="bold"
+            android:layout_gravity="right"
+            android:background="@drawable/radius_left_blue"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="bottom">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size2"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/darkGray"
+            android:text="@string/success_checkout" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size2"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/smoothBlue"
+            android:text="Print Transaction ? " />
+
+
+        <Button
+            android:id="@+id/btnPrint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size3"
+            android:layout_marginTop="@dimen/size3"
+            android:layout_marginEnd="@dimen/size3"
+            android:background="@drawable/border_smooth_blue"
+            android:text="@string/print"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/smoothBlue"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnViewPDF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size3"
+            android:layout_marginTop="@dimen/size3"
+            android:layout_marginEnd="@dimen/size3"
+            android:background="@drawable/border_smooth_blue"
+            android:text="@string/generate_pdf"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/smoothBlue"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

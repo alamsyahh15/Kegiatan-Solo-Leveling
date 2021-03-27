@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewProduct"
+        android:layout_width="@dimen/size8"
+        android:layout_height="@dimen/size8"
+        android:layout_marginStart="@dimen/size2"
+        android:layout_marginTop="@dimen/size2"
+        android:src="@drawable/ex_product"
+        android:contentDescription="@string/title_image_product" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_below="@+id/imageViewProduct"
+        android:layout_marginTop="@dimen/size3"
+        android:background="@color/lightGray" />
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size3"
+        android:layout_marginTop="@dimen/size2"
+        android:layout_toEndOf="@id/imageViewProduct"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewNameProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_name_product"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font1"
+            />
+
+        <TextView
+            android:id="@+id/textViewDescProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size1"
+            android:text="@string/title_name_product"
+            android:visibility="gone"
+            android:textColor="@color/lightGray"
+            android:textSize="@dimen/font" />
+
+        <TextView
+            android:id="@+id/textViewQtyProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size1"
+            android:text="@string/title_stock"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/font" />
+
+    </LinearLayout>
+
+</RelativeLayout>
